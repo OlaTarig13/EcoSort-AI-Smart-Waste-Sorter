@@ -5,7 +5,7 @@ from ultralytics import YOLO
 import os
 
 try:
-    yolo_model = YOLO("best (2).pt")
+    yolo_model = YOLO("best .pt")
     print("[OK] YOLO model loaded successfully.")
 except Exception as e:
     print(f"[ERROR] Failed to load YOLO model: {e}")
