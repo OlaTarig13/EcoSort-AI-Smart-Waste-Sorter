@@ -59,13 +59,13 @@ try:
             elif "paper" in detected_material:
                     command = b'W'
                     label = "Paper bin (W)"
-            elif "glass" in detected_material:
-                command = b'G'
-                label = "Glass bin (G)"
+            elif "matel" in detected_material:
+                command = b'M'
+                label = "Glass bin (M)"
             else:
                 command = b'U'
                 label = "Unknown (U)"
-                print("[WARNING] Material type not clearly recognized.")
+                print("Place it in black containar")
 
             arduino.write(command)
             print(f"-> Sending to Arduino: Open {label}")
