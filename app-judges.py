@@ -15,7 +15,7 @@ st.write("Driving Net-Zero Sustainability via Edge Computer Vision & Robotics")
 @st.cache_resource
 def load_yolo_model():
     try:
-        model = YOLO("best (2) .pt")
+        model = YOLO("best .pt")
         return model
     except Exception as e:
         st.error(f"[ERROR] Failed to load YOLO model: {e}")
