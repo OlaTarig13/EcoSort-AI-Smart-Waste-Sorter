@@ -12,10 +12,18 @@ st.title("♻️ EcoSort AI: Smart Waste Segregation System")
 st.write("Driving Net-Zero Sustainability via Edge Computer Vision & Robotics")
 
 #upload the yolo model 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_NAME = "best.pt"
+MODEL_PATH = os.path.join(BASe_DIR, MODEL_NAME)
+
 @st.cache_resource
 def load_yolo_model():
+    if not os.path.exists(MODEL_PATH):
+        st.error(f"The template file was not found in the path:{MODEL_PATH}")
+        st.info("Make sure you upload the model weights file (.pt) to the same code folder on GitHub.")
+        return None
     try:
-        model = YOLO("best.pt")
+        model = YOLO(MODEL_PATH)
         return model
     except Exception as e:
         st.error(f"[ERROR] Failed to load YOLO model: {e}")
