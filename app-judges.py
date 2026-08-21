@@ -14,7 +14,7 @@ st.write("Driving Net-Zero Sustainability via Edge Computer Vision & Robotics")
 #upload the yolo model 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_NAME = "best.pt"
-MODEL_PATH = os.path.join(BASe_DIR, MODEL_NAME)
+MODEL_PATH = os.path.join(BASE_DIR, MODEL_NAME)
 
 @st.cache_resource
 def load_yolo_model():
